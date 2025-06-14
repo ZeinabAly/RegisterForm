@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+
+/* PARTIE1: BUTTON ET TEXTE */
+:root{
+    --violet: #5A58A6;
+    --vert: #36BF7F;
+    --rouge: #d01111a6;
+    --blanc-casse: #F2F2F2;
+    --blanc: #fff;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: .4s;
+    /* font-family: Calibri, 'Trebuchet MS', sans-serif; */
+    font-family: "Jost", Calibri;
+}
+
+
+
+/* MOBILE FIRST */
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    background: url("./images/bg-intro-mobile.png");
+    overflow-x: hidden;
+}
+
+body main{
+    width: 100%;
+    min-height: 100vh;
+    padding: 50px 0;
+    background: var(--rouge);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+main .container{
+    max-width: 380px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+header h1{
+    font-size: 1.8rem;
+    font-weight: bolder;
+}
+
+header h1 .span2{
+    margin-top: 5px; 
+    display: inline-block;
+}
+
+header h1, header p{
+    color: var(--blanc-casse);
+    text-align: center;
+    line-height: 25px;
+}
+
+header p{
+    margin: 10px 20px;
+    font-size: .85rem;
+    font-weight: 545;
+}
+
+.partie2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.partie2 .try-free button{
+    text-align: center;
+    padding: 15px 100px;
+    background: var(--violet);
+    color: var(--blanc-casse);
+    border-radius: 7px;
+    border: none;
+    font-size: .9rem;
+    box-shadow: 0px 5px 0px #1816161e;
+}
+
+.partie2 .try-free button span{
+    font-weight: bold;
+}
+
+.partie2 .form-content{
+    width: 100%;
+    background: var(--blanc-casse);
+    padding: 40px 30px;
+    border-radius: 5px;
+    box-shadow: 0px 5px 0px #1816161e;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.partie2 form{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 13px;
+}
+
+.partie2 form input{
+    width: 100%;
+    padding: 13px 7px;
+    background: transparent;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.partie2 form input:focus{
+    outline: 1px solid var(--vert);
+}
+
+.partie2 form button{
+    width: 100%;
+    padding: 15px 13px;
+    background: var(--vert);
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--blanc-casse);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px -4px 4px #18161624 inset;
+    cursor: pointer;
+}
+
+.partie2 form button:hover{
+    background: #20aa6a;
+}
+
+.partie2 .instructions{
+    text-align: center;
+    color: #918f8f;
+    font-size: .8rem;
+    margin: 0 10px;
+}
+
+.partie2 .instructions a{
+    text-decoration: none;
+    color: rgb(199, 59, 16);
+    font-weight: bold;
+}
+
+/* DESKTOP */
+
+@media screen and (min-width: 780px) {
+    body{
+        background: url("./images/bg-intro-desktop.png");
+    }
+
+    main .container{
+        max-width: 90%;
+        margin: auto;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        align-items: center;
+    }
+
+    header h1{
+        font-size: 2.6rem;
+        font-weight: bolder;
+    }
+
+    header h1 .span2{
+        margin-top: 10px; 
+        display: inline-block;
+    }
+
+    
+    header h1, header p{
+        color: var(--blanc-casse);
+        text-align: left;
+        line-height: 30px;
+    }
+    
+    header p{
+        margin: 20px 0;
+        font-size: .87rem;
+    }
+
+    .partie2{
+        max-width: 450px;
+    }
+
+    .partie2{
+        width: 100%;
+        display: grid;
+
+    }
+
+    .partie2 .try-free button{
+        min-width: 100%;
+        padding: 15px 30px;
+    }
+
+    .partie2 form button{
+        padding: 13px 7px;
+    }
+
+    
+    .partie2 .form-content{
+        max-width: 450px;
+        padding: 30px 40px;
+        border-radius: 5px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .partie2 form input{
+        width: 100%;
+        padding: 11px 13px;
+        background: transparent;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    main .container{
+        max-width: 80%;
+    }
+}
+
+
+/*************** LES STYLES DE VALIDATION *************************/
+.error input {
+    color: red;
+    border: 1px solid rgba(255, 0, 0, 0.527);
+}
+.error input:focus{
+    outline: 1px solid rgba(255, 0, 0, 0.527) !important;
+}
+
+.error span {
+    visibility: visible;
+    opacity: 1;
+    color: red;
+    font-size: 12px;
+}
+#progress-bar{
+    margin-top: 5px;
+    margin-left: 2px;
+    /* background: red; */
+    /* width: 33%; */
+    height: 6.5px;
+    border-radius: 50px;
+    transition: 0.3s;
+    /* box-shadow: 2px 2px 2px rgb(177, 3, 3) inset, -2px -2px 2px rgb(177, 3, 3) inset; */
+}
+.progressRed {
+    background: red;
+    width: 33%;
+    height: 2px;
+    box-shadow: 2px 2px 2px rgb(177, 3, 3) inset, -2px -2px 2px rgb(177, 3, 3) inset;
+    visibility: visible;
+}
+.progressBlue {
+    background: #16d9e7;
+    width: 67%;
+    visibility: visible;
+    box-shadow: 2px 2px 2px #02949f inset, -2px -2px 2px #02949f inset;
+}
+.progressBlueInput{
+    outline: 1px solid #16d9e7;
+}
+.progressBlueInput:focus{
+    outline: 1px solid #16d9e7 !important;
+}
+
+.progressGreen {
+    width: 100%;
+    background: #5ef9a4;
+    box-shadow: 2px 2px 2px #2cc772 inset, -2px -2px 2px #2cc772 inset;
+    visibility: visible;
+}
+
+footer{
+    margin-top: 30px;
+    color: var(--blanc);
+    font-weight: bold;
+}
